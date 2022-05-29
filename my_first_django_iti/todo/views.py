@@ -49,14 +49,5 @@ def edit_task(request, **kwargs):
 def update_task(request, **kwargs):
     target_task = kwargs.get('task_id')
     task = request.POST['task']
-    # time = request.POST['time']
-    # status = request.POST['status']
-    # priority = request.POST['priority']
     my_todos[target_task]['task'] = task
-    #     {
-    #     'task': task,
-    #     # 'priority': priority,
-    #     # 'time': time,
-    #     # 'is_finished': status,
-    # }
     return redirect(reverse('todo:home'))
