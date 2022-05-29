@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../.idea/Tasks.iml" filepath="$PROJECT_DIR$/../.idea/Tasks.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/my_first_django_iti.iml" filepath="$PROJECT_DIR$/.idea/my_first_django_iti.iml" />
     </modules>
   </component>
