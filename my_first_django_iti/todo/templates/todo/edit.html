@@ -1,0 +1,58 @@
+{% extends 'todo/base.html' %}
+
+{% block edit_task %}
+<section class="vh-100" style="background-color: #eee;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-lg-9 col-xl-7">
+        <div class="card rounded-3">
+          <div class="card-body p-4">
+<form class="row row-cols-lg-auto g-3 justify-content-center align-items-center mb-4 pb-2" action="{% url 'todo:update' task_no %}" method="post">
+<table class="table mb-4">
+  <tbody>
+    <tr>
+      <th scope="col-6">No.</th>
+      <th scope="row">{{task_no}}</th>
+    </tr>
+  <tr>
+    <th scope="col">Task</th>
+    <td>
+      <input type="text"  name="task" class="form-control" placeholder="{{details.task}}"/>
+    </td>
+  </tr>
+  <tr>
+    <th scope="col">Priority</th>
+      <td>
+        <input type="text" name="priority" class="form-control" placeholder="{{details.priority}}"/>
+      </td>
+  </tr>
+  <tr>
+    <th scope="col">Time</th>
+    <td>
+      <input type="text" name="time" class="form-control" placeholder="{{details.time}}"/>
+    </td>
+  </tr>
+  <tr>
+    <th scope="col">Status</th>
+    <td>
+      <input type="text" name="status" class="form-control" placeholder="{{details.is_finished}}"/>
+    </td>
+  </tr>
+  <tr>
+      <td>
+<!--         <a href="{% url 'todo:update' task_no %}" class="btn btn-success ms-1">Update</a>-->
+          {% csrf_token %}
+          <button class="btn btn-success">Update</button>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+  </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+{% endblock %}

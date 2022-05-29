@@ -1,0 +1,58 @@
+{% extends 'todo/base.html' %}
+{% block home %}
+
+<section class="vh-100" style="background-color: #eee;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-lg-9 col-xl-7">
+        <div class="card rounded-3">
+          <div class="card-body p-4">
+
+            <h4 class="text-center my-3 pb-3">To Do App</h4>
+
+            <form class="row row-cols-lg-auto g-3 justify-content-center align-items-center mb-4 pb-2" action="add/" method="post">
+              {% csrf_token %}
+              <div class="col-12">
+                <div class="form-outline">
+                  <input type="text" id="form1" name="new_task" class="form-control" placeholder="Enter a task here"/>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <button class="btn btn-primary">Add</button>
+              </div>
+            </form>
+
+            <table class="table mb-4">
+              <thead>
+                <tr>
+                  <th scope="col">No.</th>
+                  <th scope="col">Task</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+              {% for todo,value in todo_list.items %}
+                <tr>
+                  <th scope="row">{{todo}}</th>
+                  <td>{{value.task}}</td>
+                  <td>{{value.is_finished}}</td>
+                  <td>
+                    <a href="{% url 'todo:view' todo %}" class="btn btn-info ms-1">View</a>
+                    <a href="{% url 'todo:done' todo %}" class="btn btn-success ms-1">Finished</a>
+                    <a href="{% url 'todo:edit' todo %}" class="btn btn-warning">Edit</a>
+                    <a href="{% url 'todo:delete' todo %}" class="btn btn-danger">Delete</a>
+                  </td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
