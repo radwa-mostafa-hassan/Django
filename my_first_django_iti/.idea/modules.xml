@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/my_first_django_iti.iml" filepath="$PROJECT_DIR$/.idea/my_first_django_iti.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../Lectures/Code/my_first_project/.idea/my_first_project.iml" filepath="$PROJECT_DIR$/../../Lectures/Code/my_first_project/.idea/my_first_project.iml" />
-    </modules>
-  </component>
-</project>
