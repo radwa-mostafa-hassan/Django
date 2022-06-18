@@ -22,4 +22,6 @@ urlpatterns = [
     path('todo/', include('todo.urls')),
     path('actor/', include('actor.urls')),
     path('movie/', include('movie.urls')),
+    path('account/', include('django.contrib.auth.urls'))
+
 ]
